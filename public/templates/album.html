@@ -2,6 +2,14 @@
   <div class='album-header-container row'> <!-- Album Header -->
     <div class='col-md-3'> <!-- Album Image -->
       <img ng-src="{{ album.albumArtUrl }}" />
+ 
+      <clickMe>Click me!</clickMe>
+      <hoverMe>Hover me!</hoverMe>
+      <br>
+      <classify>im-an-e-class</classify>
+      <p classify>im-an-a-class</p>
+      <p class="classify">im-a-c-class<p>
+
     </div>
     <div class='album-header-information col-md-8 col-md-push-1'> <!-- Album Information -->
         <h3 class='album-title'> {{ album.name }} </h3>
@@ -38,7 +46,6 @@
         <td clas="col-md-2">{{ song.length }}</td>
       </tr>
     </table> 
-  
   </div>
   <ng-include src="'/templates/player_bar.html'"></ng-include>
 </div>

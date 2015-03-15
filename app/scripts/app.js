@@ -166,18 +166,18 @@ blocJams.service('SongPlayer', function() {
 
 blocJams.directive('slider', function() {
 
-var updateSeekPercentage = function($seekBar, event) {
-  var barWidth = $seekBar.width();
-  var offsetX = event.pageX - $seekBar.offset().left;
+  var updateSeekPercentage = function($seekBar, event) {
+    var barWidth = $seekBar.width();
+    var offsetX = event.pageX - $seekBar.offset().left;
 
-  var offsetXPercent = (offsetX / barWidth) * 100;
-  offsetXPercent = Math.max(0, offsetXPercent);
-  offsetXPercent = Math.min(100, offsetXPercent);
+    var offsetXPercent = (offsetX / barWidth) * 100;
+    offsetXPercent = Math.max(0, offsetXPercent);
+    offsetXPercent = Math.min(100, offsetXPercent);
 
-  var percentageString = offsetXPercent + '%';
-  $seekBar.find('.fill').width(percentageString);
-  $seekBar.find('.thumb').css({left: percentageString});  
-  } 
+    var percentageString = offsetXPercent + '%';
+    $seekBar.find('.fill').width(percentageString);
+    $seekBar.find('.thumb').css({left: percentageString});  
+    } 
 
 
   return {
@@ -211,4 +211,48 @@ var updateSeekPercentage = function($seekBar, event) {
     }
   };
 });
+
+blocJams.directive('clickme', function(){
+  return {
+    restrict: 'E',
+    link: function(scope, element) {
+      $(element).click(function() {
+         alert("click");
+      });
+    }
+  };
+});
+
+
+
+blocJams.directive('hoverme', function(){
+  return {
+    restrict: 'E',
+    link: function(scope, element) {
+      $(element).hover(function() {
+         for (i = 0; i < 10; i++) {
+          setTimeout(console.log(i), 1000);
+        };
+      });
+    }
+  };
+});
+
+blocJams.directive('classify', function(){
+  return {
+    restrict: 'EAC',
+    link: function(scope, element) {
+     $("classify").addClass($(element).text());
+     
+
+
+      
+    
+    }
+  };
+});
+
+
+
+
 
