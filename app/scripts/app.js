@@ -243,11 +243,6 @@ blocJams.directive('classify', function(){
     restrict: 'EAC',
     link: function(scope, element) {
      $("classify").addClass($(element).text());
-     
-
-
-      
-    
     }
   };
 });
