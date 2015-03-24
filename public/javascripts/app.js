@@ -533,8 +533,6 @@ blocJams.directive('slider', ['$document', function($document){
       scope.max = 100;
       var $seekBar = $(element);
 
-      console.log(attributes);
-
       attributes.$observe('value', function(newValue) {
         scope.value = numberFromValue(newValue, 0);
       });
